@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+
+
+<!-- ######################################################## -->
+
+{% block content %}
+
+<!-- <div class="polaroid" id="map" style="height:480px"></div> -->
+
+<div class="polaroid" id="map" style="height:480px">
+
+</div>
+
+<script src="static/js/leaflet_map.js"></script>
+<!-- <script src="static/js/map.js"></script> -->
+
+
+{% endblock content %}
+
+<!-- ######################################################## -->
+
+{% block sidebar %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.1.1/build/ol.js"></script>
+<script src="https://d19vzq90twjlae.cloudfront.net/leaflet/v0.7.7/leaflet.js"></script>
+<script src="static/js/AnimatedMarker.js"></script>
+
+<div class="content-section">
+    <h3>Välj busslinje</h3>
+    <button disabled id="button" class="button" onclick="RealTimeTestButtonCallback()">Show all buses</button>
+    <button id="button" class="button" onclick="BusspuckRealTimeTestButtonCallback()">Show busspuck</button>
+
+    <select id="busSelect" class="w3-select w3-border" name="option" onchange="ListSelectCallback.call(this, event)">
+        <option value="" disabled selected>Busslinje...</option>
+    </select>
+</div>
+
+
+{% endblock sidebar %}
+
+<!-- ######################################################## -->
